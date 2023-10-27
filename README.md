@@ -71,8 +71,7 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Login to GitHub Container Registry
+      - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
@@ -99,8 +98,7 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Login to GitLab
+      - name: Login to GitLab
         uses: docker/login-action@v3
         with:
           registry: registry.gitlab.com
@@ -130,8 +128,7 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Login to ACR
+      - name: Login to ACR
         uses: docker/login-action@v3
         with:
           registry: <registry-name>.azurecr.io
@@ -170,16 +167,14 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-    -
-      name: Authenticate to Google Cloud
+    - name: Authenticate to Google Cloud
       id: auth
       uses: google-github-actions/auth@v1
       with:
         token_format: access_token
         workload_identity_provider: <workload_identity_provider>
         service_account: <service_account>
-    -
-      name: Login to GCR
+    - name: Login to GCR
       uses: docker/login-action@v3
       with:
         registry: gcr.io
@@ -212,8 +207,7 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Login to GCR
+      - name: Login to GCR
         uses: docker/login-action@v3
         with:
           registry: gcr.io
@@ -243,16 +237,14 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Authenticate to Google Cloud
+      - name: Authenticate to Google Cloud
         id: auth
         uses: google-github-actions/auth@v1
         with:
           token_format: access_token
           workload_identity_provider: <workload_identity_provider>
           service_account: <service_account>
-      -
-        name: Login to GAR
+      - name: Login to GAR
         uses: docker/login-action@v3
         with:
           registry: <location>-docker.pkg.dev
@@ -288,8 +280,7 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Login to GAR
+      - name: Login to GAR
         uses: docker/login-action@v3
         with:
           registry: <location>-docker.pkg.dev
@@ -317,8 +308,7 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Login to ECR
+      - name: Login to ECR
         uses: docker/login-action@v3
         with:
           registry: <aws-account-number>.dkr.ecr.<region>.amazonaws.com
@@ -340,8 +330,7 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Login to ECR
+      - name: Login to ECR
         uses: docker/login-action@v3
         with:
           registry: <aws-account-number>.dkr.ecr.<region>.amazonaws.com
@@ -367,15 +356,13 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Configure AWS Credentials
+      - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: <region>
-      -
-        name: Login to ECR
+      - name: Login to ECR
         uses: docker/login-action@v3
         with:
           registry: <aws-account-number>.dkr.ecr.<region>.amazonaws.com
@@ -401,8 +388,7 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Login to Public ECR
+      - name: Login to Public ECR
         uses: docker/login-action@v3
         with:
           registry: public.ecr.aws
@@ -435,8 +421,7 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Login to OCIR
+      - name: Login to OCIR
         uses: docker/login-action@v3
         with:
           registry: <region>.ocir.io
@@ -462,8 +447,7 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Login to Quay.io
+      - name: Login to Quay.io
         uses: docker/login-action@v3
         with:
           registry: quay.io
